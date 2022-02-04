@@ -1,0 +1,278 @@
+/*
+[[Font | enum(Arial,Arial Narrow, Roboto, Brush Script MT,Calibri,Cambria,Candara,Copperplate,Courier,Courier New,Didot,Garamond,Geneva,Helvetica,Lucida Bright,Monaco,Optima,Perpetua,Times,Times New Roman,Verdana) |Arial | {group: General, order: 2}]];
+[[X Color | colour | #ffffff  | {group: Closing Button, groupOrder: 5, order: 1 }]]
+[[Background Plus Colour | colour | #005E6E | {group: Closing Button, order: 2 }]]
+[[Background Plus Top Margin | number | 75 | {group: Closing Button, order: 2 }]]
+*/
+
+#bx-{{ref}} a,
+#bx-{{ref}} p,
+#bx-{{ref}} span,
+#bx-{{ref}} h3 {
+  font-family: [[ Font ]];
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+#bx-{{ref}} #bx-demobar {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  height: 100%;
+  width: 450px;
+  background-color: #fff;
+  z-index: 99999;
+  transition: right 1.6s ease-in-out;
+  box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(0, 0, 0, 0.1);
+  font-family: [[Font]];
+}
+
+#bx-{{ref}} #bx-demobar.open {
+  right: 0;
+}
+
+#bx-{{ref}} #bx-demobar .bx-demobar__img-container {
+  z-index: 1;
+  width: 100%;
+  height: 300px;
+}
+
+#bx-{{ref}} #bx-demobar .bx-demobar__img-container .img-container__image {
+  margin: 0;
+  background: #dcdcdc;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#bx-{{ref}} #bx-demobar .bx-demobar__body {
+  padding: 5px;
+}
+
+#bx-{{ref}} #bx-demobar .bx-demobar__body h3 {
+  margin-top: 28px;
+  line-height: 1.5;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+}
+
+#bx-{{ref}} #bx-demobar .bx-demobar__body p {
+  padding: 12px 0 25px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 28px;
+  color: #000;
+}
+
+#bx-{{ref}} #bx-demobar .body__button {
+  display: inline-block;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #000000;
+  font-family: [[ Font ]];
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#bx-{{ref}} #bx-demobar .body__button:hover {
+  color: #fff;
+  background-color: #9e9e9e;
+}
+
+#bx-{{ref}} #bx-demobar .bx-demobar__close {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: [[Background Plus Top Margin]]px;
+  width: 40px;
+  height: 40px;
+  transform: translateX(-100%);
+  background-color: [[ Background Plus Colour ]];
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+/* close button */
+#bx-{{ref}} .close__btn-close-icon {
+  background: transparent;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#bx-{{ref}} .close__btn-close-icon:after {
+  content: '';
+  height: 24px;
+  border-left: 4px solid [[ X Color ]];
+  position: absolute;
+  transform: rotate(0deg);
+}
+
+#bx-{{ref}} .close__btn-close-icon:before {
+  content: '';
+  height: 24px;
+  border-left: 4px solid [[ X Color ]];
+  position: absolute;
+  transform: rotate(-90deg);
+}
+
+
+
+
+/* accordion */
+
+.demobar-container {
+  width: 99%;
+  max-width: 440px;
+  margin: 5px auto;
+  overflow-y: auto;
+  height: 90vh;
+}
+
+.demobar-container::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.demobar-container::-webkit-scrollbar-track {
+  background: #fff;        /* color of the tracking area */
+}
+
+.demobar-container::-webkit-scrollbar-thumb {
+  background-color: #005E6E;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #fff;  /* creates padding around scroll thumb */
+}
+
+#saveMsg {
+    background-color: #333378;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin: 16px;
+    border-radius: 5px;
+    position: absolute;
+    width: 410px;
+}
+
+button.accordion {
+  width: 100%;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+button.accordion:after {
+  content: "+";
+  font-size: 18px;
+  float: right;
+}
+
+button.accordion.is-open:after {
+  content: "-";
+}
+
+button.accordion:hover,
+button.accordion.is-open {
+  background-color: #ddd;
+}
+
+.accordion-content {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+form {
+  max-width: 475px;
+  margin: 10px auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 95%;
+  background-color: #efefef;
+  color: #212621;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 20px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 9px 39px 8px 39px;
+  color: #FFF;
+  background-color: #005E6E; /*#4bc970;*/
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  /*border: 1px solid #3ac162;*/
+  border-width: 0px;
+  /*box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;*/
+  margin-bottom: 10px;
+}
+
+.formfields {
+  margin-bottom: 3px;
+  border: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: .70em;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+

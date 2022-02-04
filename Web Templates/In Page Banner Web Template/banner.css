@@ -1,0 +1,29 @@
+/*
+[[Background Color | colour | ##e9e5de | {  group: HTML, order: 4 } ]]
+*/
+ 
+.text-block {
+  margin-top: 20px;
+  background-color: [[Background Color]];
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  height: 344px;
+  padding: 3rem;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text-block h2 {
+  font-family: 'Noe Display',serif;
+  font-weight: 700;
+  text-transform: unset;
+  border-bottom: 1px solid #7f7e79;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1rem 2.75rem;
+}
+
+.text-block p {
+  margin: 0 0 10px;
+}
