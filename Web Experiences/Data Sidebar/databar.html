@@ -1,0 +1,37 @@
+<!-- define the structure and content of your Experience in HTML e.g.-->
+<div id="bx-databar">
+    <div class="bx-demobar__close">
+      <div class="close__btn-close-icon"></div>
+    </div>
+    <div class="bx-demobar__body">
+      <h3>Guest Data</h3>
+  
+      <div id="saveMsg" style="display: none">Event Sent</div>
+  
+      {{#if guest}}
+      <span>Guest ref: {{guest.ref}}</span>
+      <span>Guest Type: {{guest.guestType}}</span>
+  
+      <div class="databar-container">
+        {{#if guest.sessions}} 
+          {{#each guest.sessions}}
+          <button class="databar-accordion">
+              Channel: {{sessionType}} - {{status}} {{cartType}}
+          </button>
+          <div class="databar-accordion-content">
+              {{#if events}} 
+                  <ol>
+                  {{#each events}}
+                  <li class="li{{type}}">{{type}} {{arbitraryData.page}}
+                  {{arbitraryData.email}}</li>
+                  {{/each}}
+                  </ol> 
+              {{/if}}
+          </div>
+          {{/each}} 
+        {{/if}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  
