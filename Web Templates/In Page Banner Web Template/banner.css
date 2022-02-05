@@ -1,9 +1,9 @@
-/*
-[[Background Color | colour | ##e9e5de | {  group: HTML, order: 4 } ]]
+/** style your Experience with CSS 
+[[Background Color | colour | #e9e5de | {  group: HTML, order: 4 } ]]
+[[Text Color | colour | #000000 | {  group: HTML, order: 4 } ]]
 */
- 
 .text-block {
-  margin-top: 20px;
+  margin: 10px 0px;
   background-color: [[Background Color]];
   vertical-align: middle;
   display: flex;
@@ -13,6 +13,7 @@
   text-align: center;
   justify-content: center;
   flex-direction: column;
+  min-width:200px;
 }
 
 .text-block h2 {
@@ -22,8 +23,10 @@
   border-bottom: 1px solid #7f7e79;
   margin-bottom: 2.5rem;
   padding: 1rem 1rem 2.75rem;
+  color: [[Text Color]];
 }
 
 .text-block p {
   margin: 0 0 10px;
+  color: [[Text Color]];
 }
