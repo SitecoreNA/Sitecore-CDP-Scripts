@@ -2,7 +2,7 @@
 [[Background Color | colour | #e9e5de | {  group: HTML, order: 4 } ]]
 [[Text Color | colour | #000000 | {  group: HTML, order: 4 } ]]
 */
-.text-block {
+.personalize-text-block {
   margin: 10px 0px;
   background-color: [[Background Color]];
   vertical-align: middle;
@@ -16,7 +16,7 @@
   min-width:200px;
 }
 
-.text-block h2 {
+.personalize-text-block h2 {
   font-family: 'Noe Display',serif;
   font-weight: 700;
   text-transform: unset;
@@ -27,7 +27,7 @@
   text-transform: none;
 }
 
-.text-block p {
+.personalize-text-block p {
   margin: 0 0 10px;
   color: [[Text Color]];
   font-size: 15px;

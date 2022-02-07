@@ -9,6 +9,13 @@ var styleTag = document.getElementById('style-' + variant.ref);
 if (styleTag) {
     styleTag.innerHTML = compiledCSS;
 }
+
+// Adds a unique variant identifier to CSS when deployed to ensure CSS does not impact styling of other elements.
+var compiledCSS = Boxever.templating.compile(variant.assets.css)(variant);
+var styleTag = document.getElementById('style-' + variant.ref);
+if (styleTag) {
+    styleTag.innerHTML = compiledCSS;
+}
 // End Adds a unique variant identifier to CSS when deployed to ensure CSS does not impact styling of other elements.
 
 if (placement == 'before') {
