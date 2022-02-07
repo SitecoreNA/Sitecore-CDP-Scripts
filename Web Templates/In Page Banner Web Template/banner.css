@@ -24,9 +24,11 @@
   margin-bottom: 2.5rem;
   padding: 1rem 1rem 2.75rem;
   color: [[Text Color]];
+  text-transform: none;
 }
 
 .text-block p {
   margin: 0 0 10px;
   color: [[Text Color]];
+  font-size: 15px;
 }
