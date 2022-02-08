@@ -4,7 +4,7 @@
 // @version 0.2
 // @description Generic Load Sitecore CDP Tampermonkey scripts
 // @author Chris Castle
-// @match https://*.thosmoser.com/*
+// @match https://*.yoursite.com/*
 // @grant  none
 // ==/UserScript==
 
