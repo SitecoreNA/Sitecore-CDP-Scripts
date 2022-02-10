@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name Sitecore CDP base script - Thos Moser
+// @name Sitecore CDP base script - yoursite
 // @namespace http://tampermonkey.net/
 // @version 0.2
 // @description Generic Load Sitecore CDP Tampermonkey scripts
