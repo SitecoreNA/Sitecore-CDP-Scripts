@@ -3,7 +3,7 @@
 // Any truthy return value will pass the audience filter, it is recommended to return an object
 // The value returned can be accessed from the variant API response as 'filter'
 
-
+// This is confirmed to work. - CHC
 
 (function () {
     var currentWebSession = getCurrentWebSession(guest);
