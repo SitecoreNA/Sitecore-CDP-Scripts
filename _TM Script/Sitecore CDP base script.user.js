@@ -3,7 +3,7 @@
 // @namespace http://tampermonkey.net/
 // @version 0.2
 // @description Generic Load Sitecore CDP Tampermonkey scripts
-// @author Chris Castle
+// @author Chris Castle & Brian Bishop
 // @match https://*.yoursite.com/*
 // @grant  none
 // ==/UserScript==
