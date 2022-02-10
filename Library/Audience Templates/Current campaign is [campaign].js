@@ -3,33 +3,46 @@
 // Any truthy return value will pass the audience filter, it is recommended to return an object
 // The value returned can be accessed from the variant API response as 'filter'
 
+// This code should work. - CHC
+
+var utmcampaign = '[[UTM Campaign|string]]';
+
 (function () {
-    var currentWebSession = getCurrentWebSession(guest);
-    if (currentWebSession) {
-      return getUTMCampaign(currentWebSession);
-    }
-    
-    return false;
-  })();
-  
-  function getCurrentWebSession(guest) {
-      var sessions = guest.sessions;
-      for (var i = 0; i < sessions.length; i++) {
-          if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem !== null && sessions[i].status === 'OPEN') {
-              return sessions[i];
-          }
-      }
-      return null;
-  }
-  
-  function getUTMCampaign(session) {
-      if (session.utmAttributes
-          && session.utmAttributes.campaign 
-          && session.utmAttributes.campaign== "[[UTM Campaign|string]]") {
-          return true;
-      }
+    if (guest && guest.sessions) {
+      var currentWebSession = null;
       
+      guest.sessions.forEach((session) => {
+        if (session.channel === '[[Channel|string|WEB]]' && session.operatingSystem !== null && session.status === "OPEN") {
+          currentWebSession = session;
+          return true;
+        }
+      });
+  
+      if (currentWebSession) {
+         print(currentWebSession);
+         return getUTMCampaign(currentWebSession);
+      }
       return false;
-  }
-  
-  
+    }
+  })();
+
+function getUTMCampaign(session) {
+    print(session);
+    
+    // this should do it as the utm attributes should be on the session.
+    if (session.utmAttributes && session.utmAttributes.source && session.utmAttributes.campaign === utmcampaign) {
+        return true;
+    }
+    var retval = false;
+    // We can also iterate through the view events.
+    session.events.forEach(event => {
+       if (event.type === 'VIEW') {
+           if (event.arbitraryData && event.arbitraryData.utm_source && event.arbitraryData.utm_campaign === utmcampaign) {
+           print (event.arbitraryData);
+           retval = true;
+           }
+       } 
+    });
+    
+    return retval;
+}
