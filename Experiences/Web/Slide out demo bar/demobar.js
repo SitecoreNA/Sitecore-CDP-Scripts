@@ -160,13 +160,6 @@ function sendCustomEvent() {
 }
 
 
-
-
-
-
-
-
-
 /* code to make accordion work */
 const accordionBtns = document.querySelectorAll(".accordion");
 

@@ -9,7 +9,6 @@ if (styleTag) {
 // make space in the body for the experience
 insertHTMLAfter('body');
 
-
 /* code to operate the databar */ 
 var bxContent = document.getElementById('bx-databar');
 setTimeout(function () {
