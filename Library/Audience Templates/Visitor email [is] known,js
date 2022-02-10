@@ -3,12 +3,22 @@
 // Any truthy return value will pass the audience filter, it is recommended to return an object
 // The value returned can be accessed from the variant API response as 'filter'
 
+// This is confirmed to work. - CHC
+
+var operator = '[[ operator | enum(is, is not)]]';
+
 (function () {
-    let count = `[[X | number]]`
+  if (operator === 'is') {
+      if(guest.email !== null){
+          return true;
+      }
+  }
   
-    if (guest.sessions && guest.sessions.length >= count) 
-      return true;
-    
-    return false;
-  })();
+  if (operator === 'is not') {
+      if(guest.email === null){
+          return true;
+      }
+  }
   
+  return false;
+})();

@@ -3,7 +3,7 @@
 // Any truthy return value will pass the audience filter, it is recommended to return an object
 // The value returned can be accessed from the variant API response as 'filter'
 
-
+// This is confirmed to work. - CHC written by Richard Flynn
 
 (function () {
     var currentWebSession = getCurrentWebSession(guest);
@@ -26,8 +26,7 @@
       }
       return null;
   }
-  
-  
+    
   function getNumberOfViewEventsInSession(session, viewPage) {
       var numberOfEvents = 0;
       for (var i = 0; i < session.events.length; i++) {
