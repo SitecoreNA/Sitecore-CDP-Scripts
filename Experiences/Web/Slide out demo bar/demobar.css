@@ -138,6 +138,7 @@
   color: #333;
   cursor: pointer;
   transition: background-color 0.2s linear;
+  font-family: [[Font]];
 }
 
 #bx-demobar button.accordion:after { content: "+"; font-size: 18px; float: right; }
@@ -177,6 +178,6 @@
 #bx-demobar button { padding: 9px 39px 8px 39px; color: #FFF; background-color: #005E6E; font-size: 18px; text-align: center; font-style: normal; border-radius: 5px; width: 100%; border-width: 0px; margin-bottom: 10px; }
 
 #bx-demobar .formfields { margin-bottom: 3px; border: none; }
-#bx-demobar label { display: block; margin-bottom: 8px; font-size: .70em; }
-#bx-demobar label.light { font-weight: 300; display: inline; }
+#bx-demobar label { display: block; margin-bottom: 8px; font-size: .70em; font-family: [[Font]]; text-transform: lowercase; }
+#bx-demobar label.light { font-weight: 300; display: inline; font-family: [[Font]]; }
 

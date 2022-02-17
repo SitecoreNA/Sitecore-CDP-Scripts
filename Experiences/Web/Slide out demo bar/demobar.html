@@ -3,84 +3,104 @@
     <div class="close__btn-close-icon"></div>
   </div>
   <div class="bx-demobar__body">
-    <h3>Create Events</h3>
-    <a id="viewGuestLink" target="_blank">View Guest in CDP</a>
-    
+    <h3 style="margin:10px">Create Events</h3>
+ 
     <div id="saveMsg" style="display:none">Event Sent</div>
    
      <div class="demobar-container">
-        <button class="accordion">Identify User</button>
+        <button class="accordion">identify user</button>
         <div class="accordion-content">
           <form id="identifyUserForm" action="" method="GET">
           <div class="formfields">
-            <label for="identifyUserName">Identifier:</label>
+            <label for="identifyUserName">identifier:</label>
             <input type="text" placeholder="name" id="identifyUserName" />
 
-            <label for="identifyUserEmail">Email:</label>
+            <label for="identifyUserEmail">email:</label>
             <input type="email" placeholder="email" id="identifyUserEmail" />
 
-            <label for="identifyProviderName">Identifier Provider:</label>
+            <label for="identifyProviderName">identifier provider:</label>
             <input type="text" placeholder="provider name" id="identifyProviderName" value="SITECORE_ID" />
           </div>
-            <button id="indentifyUserButton">Send</button>
+            <button id="indentifyUserButton">send</button>
           </form>
         </div>
 
-        <button class="accordion">Add Item to Cart</button>
+        <button class="accordion">add item to cart</button>
         <div class="accordion-content">
-           <form id="identifyUserForm" action="" method="GET">
+           <form id="addItemToCartForm" action="" method="GET">
               <div class="formfields">
-                <label for="addSKU">Product SKU:</label>
+                <label for="addSKU">product sku:</label>
                 <input type="text" placeholder="product sku" id="addSKU" />
 
-                <label for="addProductNameaddProductName">Product Name:</label>
+                <label for="addProductNameaddProductName">product name:</label>
                 <input type="text" placeholder="product name" id="addProductName" />
 
-                <label for="addProductType">Product Type:</label>
+                <label for="addProductType">product type:</label>
                 <input type="text" placeholder="product type" id="addProductType" />
 
-                <label for="addPrice">Price:</label>
+                <label for="addPrice">price:</label>
                 <input type="text" placeholder="price" id="addPrice" />
 
-                <label for="addQuantity">Quantity:</label>
+                <label for="addQuantity">quantity:</label>
                 <input type="text" placeholder="quantity" id="addQuantity" value="1" />
               </div>
-              <button id="addToCartButton">Send</button>
+              <button id="addToCartButton">send</button>
             </form>
         </div>
-
-        <button class="accordion">Send Force Close</button>
+        
+        <button class="accordion">checkout</button>
         <div class="accordion-content">
-          <form id="forceCloseForm" action="" method="GET">
-                <button id="forceCloseButton">Send</button>
+           <form id="checkoutForm" action="" method="GET">
+              <div class="formfields">
+                <label for="checkoutRef">reference id:</label>
+                <input type="text" placeholder="reference" id="checkoutRef" />
+
+                <label for="checkoutStatus">status:</label>
+                <input type="text" value="PURCHASED" id="checkoutStatus" />
+              </div>
+              <button id="checkoutCartButton">send</button>
+            </form>
+        </div>
+        
+        <button class="accordion">clear cart</button>
+        <div class="accordion-content">
+           <form id="clearCartForm" action="" method="GET">
+              <button id="clearCartButton">send</button>
             </form>
         </div>
 
-        <button class="accordion">Send Custom Event</button>
+        <button class="accordion">send custom event</button>
         <div class="accordion-content">
           <form id="identifyUserForm" action="" method="GET">
               <div class="formfields">
-                <label for="mail">Type:</label>
+                <label for="mail">type:</label>
                 <input type="text" placeholder="type" id="customType" />
               </div>
-              <button id="customEventButton">Send</button>
+              <button id="customEventButton">send</button>
+            </form>
+        </div>
+        
+        <button class="accordion">send force close</button>
+        <div class="accordion-content">
+          <form id="forceCloseForm" action="" method="GET">
+                <button id="forceCloseButton">send</button>
             </form>
         </div>
 
-        <button class="accordion">Global Properties</button>
+        <button class="accordion">global properties</button>
         <div class="accordion-content">
          <form id="globalPropertiesForm" action="" method="GET">
           <div class="formfields">
-            <label for="Channel">Channel:</label>
+            <label for="Channel">channel:</label>
             <input type="text" placeholder="channel" id="Channel" value="WEB" />
 
-            <label for="Language">Language:</label>
+            <label for="Language">language:</label>
             <input type="text" placeholder="language" id="Language" value="EN" />
 
-            <label for="Currency">Currency:</label>
+            <label for="Currency">currency:</label>
             <input type="text" placeholder="currency" id="Currency" value="USD" />
 
-            <label for="PointOfSale">Point of Sale:</label>
+            <label for="PointOfSale">point of sale:</label>
             <input type="text" placeholder="point of sale" id="PointOfSale" value="StandardDemo" />
           </div>
         </form>

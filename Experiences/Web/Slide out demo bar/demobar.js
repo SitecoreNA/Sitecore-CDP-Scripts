@@ -54,8 +54,10 @@ document.getElementById("indentifyUserButton").onclick = identifyUser;
 document.getElementById("addToCartButton").onclick = addToCart;
 document.getElementById("forceCloseButton").onclick = sendForceClose;
 document.getElementById("customEventButton").onclick = sendCustomEvent;
+document.getElementById("checkoutCartButton").onclick = checkoutCartEvent;
+document.getElementById("clearCartButton").onclick = clearCartEvent;
 
-/* View Guest Link */
+/* View Guest Link 
 Boxever.browserShow(
     Boxever.getID(),
     Boxever.client_key,
@@ -63,14 +65,14 @@ Boxever.browserShow(
       var BoxeverGuestRefForPage = data.customer.ref;
       console.log(data.customer.ref);
 
-      // turn on the ciew guest button
+      // turn on the view guest button
       var BoxeverUI = Boxever.target.replace("api", "app").replace("/v1.2", "");
       var viewGuestLink = document.getElementById("viewGuestLink");
       viewGuestLink.href = BoxeverUI + "/#/guests/" + BoxeverGuestRefForPage;
     },
     "json"
   );
-
+*/
 
 /* Event methods */
 function identifyUser() {
@@ -158,6 +160,42 @@ function sendCustomEvent() {
   showToast();
   return false;
 }
+
+
+function checkoutCartEvent() {
+  var closeSessionEvent = {
+    browser_id: Boxever.getID(),
+    channel: document.getElementById("Channel").value,
+    language: document.getElementById("Language").value,
+    currency: document.getElementById("Currency").value,
+    pos: document.getElementById("PointOfSale").value,
+    page: window.location.pathname,
+    type: "CHECKOUT",
+    reference_id: document.getElementById("checkoutRef").value,
+    status: document.getElementById("checkoutStatus").value
+  };
+
+  Boxever.eventCreate(closeSessionEvent, function (data) {}, "json");
+  showToast();
+  return false;
+}
+
+function clearCartEvent() {
+  var clearCartEvent = {
+    browser_id: Boxever.getID(),
+    channel: document.getElementById("Channel").value,
+    language: document.getElementById("Language").value,
+    currency: document.getElementById("Currency").value,
+    pos: document.getElementById("PointOfSale").value,
+    page: window.location.pathname,
+    type: "CLEAR_CART",
+  };
+
+  Boxever.eventCreate(clearCartEvent, function (data) {}, "json");
+  showToast();
+  return false;
+}
+
 
 
 /* code to make accordion work */

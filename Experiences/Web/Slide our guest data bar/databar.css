@@ -197,6 +197,8 @@ button.databar-accordion.is-open {
 .identityevent { background:  #FFB204; width: 20px; height: 20px; border-radius: 10px; }
 .addevent { background:  #5548D9; width: 20px; height: 20px; border-radius: 10px; }
 .customevent { background: #333378; width: 20px; height: 20px; border-radius: 10px; }
+.checkoutevent { background: #EB7304; width: 20px; height: 20px; border-radius: 10px; }
+
 
 .bx-guest-event-p-gray { font-size:10px !important; color:gray !important; padding:0px !important; }
 .bx-guest-event-p { padding:0px !important; font-size: 13px !important; }
@@ -205,6 +207,7 @@ button.databar-accordion.is-open {
 
 .cartSession { color:  #AB0000; text-transform: lowercase;}
 .emailSession { color: #212621; text-transform: lowercase;}
-.openSession {color:#005E6E; text-transform: lowercase;}
+.openSession {color:#5548D9; text-transform: lowercase;}
 .closedSession { color:#212621; text-transform: lowercase;}
+.convertSession { color: #005E6E; text-transform: lowercase;}
 
