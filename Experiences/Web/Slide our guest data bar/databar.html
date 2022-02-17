@@ -5,9 +5,6 @@
   </div>
   <div class="bx-demobar__body">
     <h3>Guest Data</h3>
-
-    <div id="saveMsg" style="display: none">Event Sent</div>
-
     {{#if guest}}
     <h4>Type: {{guest.guestType}}</h4>
     <h5>ref: {{guest.ref}}</h5>
@@ -20,12 +17,59 @@
         </button>
         <div class="databar-accordion-content">
             {{#if events}} 
-                <ol>
                 {{#each events}}
-                <li class="li{{type}}">{{type}} {{arbitraryData.page}}
-                {{arbitraryData.email}}</li>
+                    {{#equals type 'TRACKING'}}
+                        <!-- do nothing -->
+                    {{else equals type 'VIEW'}}
+                        <div class="bx-guest-timeline-list-group-item">
+                            <div>
+                                <div class="bx-guest-timeline-session-event">
+                                    <div class="viewevent">&nbsp;</div>
+                                    <div>
+                                        <p class="bx-guest-event-p">Viewed the <em>{{arbitraryData.page}}</em> page.</p>
+                                        <p class="bx-guest-event-p-gray">{{createdAt}}</script></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{else equals type 'IDENTITY'}}
+                         <div class="bx-guest-timeline-list-group-item">
+                            <div>
+                                <div class="bx-guest-timeline-session-event">
+                                    <div class="identityevent">&nbsp;</div>
+                                    <div>
+                                        <p class="bx-guest-event-p">Guest identified <em>({{arbitraryData.email}})</em>.</p>
+                                        <p class="bx-guest-event-p-gray">{{createdAt}}</script></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{else equals type 'ADD'}}
+                        <div class="bx-guest-timeline-list-group-item">
+                            <div>
+                                <div class="bx-guest-timeline-session-event">
+                                    <div class="addevent">&nbsp;</div>
+                                    <div>
+                                        <p class="bx-guest-event-p">Added {{arbitraryData.product.type}} <em>({{arbitraryData.product.name}})</em> to cart.</p>
+                                        <p class="bx-guest-event-p-gray">{{createdAt}}</script></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="bx-guest-timeline-list-group-item">
+                            <div>
+                                <div class="bx-guest-timeline-session-event">
+                                    <div class="customevent">&nbsp;</div>
+                                    <div>
+                                        <p class="bx-guest-event-p">Event sent: <em>({{type}})</em>.</p>
+                                        <p class="bx-guest-event-p-gray">{{createdAt}}</script></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/equals}}
                 {{/each}}
-                </ol> 
             {{/if}}
         </div>
         {{/each}} 

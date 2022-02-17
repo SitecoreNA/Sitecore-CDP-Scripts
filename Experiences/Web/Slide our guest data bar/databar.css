@@ -193,32 +193,12 @@ button.databar-accordion.is-open {
   transition: max-height 0.2s ease-in-out;
 }
 
-ol {
-  list-style: none;
-  counter-reset: steps;
-  font-size:12px;
-  margin: 4px 0px 4px -25px;
-}
-ol li {
-  counter-increment: steps;
-  margin: 5px 0px;
-}
+.viewevent  { background-color: #02999A; width: 20px; height: 20px; border-radius: 10px; }
+.identityevent { background:  #FFB204; width: 20px; height: 20px; border-radius: 10px; }
+.addevent { background:  #5548D9; width: 20px; height: 20px; border-radius: 10px; }
+.customevent { background: #333378; width: 20px; height: 20px; border-radius: 10px; }
 
-ol li::before {
-  content: counter(steps);
-  margin-right: 0.5rem;
-  background: #AB0000;
-  color: white;
-  width: 1.2em;
-  height: 1.2em;
-  border-radius: 50%;
-  display: inline-grid;
-  place-items: center;
-  line-height: 1.2em;
-}
-
-ol ol li::before {
-  background: darkorchid;
-}
-
-.liTRACKING { display:none; }
+.bx-guest-event-p-gray { font-size:10px !important; color:gray !important; padding:0px !important; }
+.bx-guest-event-p { padding:0px !important; font-size: 13px !important; }
+.bx-guest-timeline-session-event { align-items: center; border-bottom: 1px solid #f1f1f1; display: grid; grid-gap: 10px; gap: 10px; grid-template-columns: 30px 1fr; padding: 5px 0;}
+.bx-guest-timeline-list-group-item { margin: 0px 10px; }
