@@ -197,7 +197,7 @@ button.databar-accordion.is-open {
 .identityevent { background:  #FFB204; width: 20px; height: 20px; border-radius: 10px; }
 .addevent { background:  #5548D9; width: 20px; height: 20px; border-radius: 10px; }
 .customevent { background: #333378; width: 20px; height: 20px; border-radius: 10px; }
-.checkoutevent { background: #EB7304; width: 20px; height: 20px; border-radius: 10px; }
+.checkoutevent { background: #FFE007; width: 20px; height: 20px; border-radius: 10px; }
 
 
 .bx-guest-event-p-gray { font-size:10px !important; color:gray !important; padding:0px !important; }
