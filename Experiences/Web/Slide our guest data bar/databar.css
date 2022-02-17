@@ -202,3 +202,9 @@ button.databar-accordion.is-open {
 .bx-guest-event-p { padding:0px !important; font-size: 13px !important; }
 .bx-guest-timeline-session-event { align-items: center; border-bottom: 1px solid #f1f1f1; display: grid; grid-gap: 10px; gap: 10px; grid-template-columns: 30px 1fr; padding: 5px 0;}
 .bx-guest-timeline-list-group-item { margin: 0px 10px; }
+
+.cartSession { color:  #AB0000; text-transform: lowercase;}
+.emailSession { color: #212621; text-transform: lowercase;}
+.openSession {color:#005E6E; text-transform: lowercase;}
+.closedSession { color:#212621; text-transform: lowercase;}
+

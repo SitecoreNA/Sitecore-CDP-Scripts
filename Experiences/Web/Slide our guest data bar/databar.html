@@ -13,7 +13,15 @@
       {{#if guest.sessions}} 
         {{#each guest.sessions}}
         <button class="databar-accordion">
-            Channel: {{sessionType}} - {{status}} {{cartType}}
+            {{#equals cartType 'ABANDONED'}} 
+                <span class="cartSession">{{sessionType}} {{cartType}} Session</span>
+            {{else equals sessionType 'EMAIL'}}
+                <span class="emailSession">{{sessionType}} Session</span>
+            {{else equals status 'OPEN'}}
+                <span class="openSession">{{sessionType}} {{status}} Session</span>
+            {{else}}
+                <span class="closedSession">{{sessionType}} {{status}} Session</span>
+            {{/equals}}
         </button>
         <div class="databar-accordion-content">
             {{#if events}} 
