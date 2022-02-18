@@ -197,7 +197,6 @@ function clearCartEvent() {
 }
 
 
-
 /* code to make accordion work */
 const accordionBtns = document.querySelectorAll(".accordion");
 
