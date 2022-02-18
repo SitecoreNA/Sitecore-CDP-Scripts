@@ -3,35 +3,32 @@
 // Any truthy return value will pass the audience filter, it is recommended to return an object
 // The value returned can be accessed from the variant API response as 'filter'
 
+var targetEvent = "VIEW";
+var targetTimes = [[numberOfTimes|number]];
+
 (function () {
-    var currentWebSession = getCurrentWebSession(guest);
-    if (currentWebSession) {
-        var numOfPageViews = getNumberOfViewEventsInSession(currentWebSession);
-        var numOfTimes = "[[N | number]]";
-        if(numOfPageViews >= numOfTimes){
-            return {};
+    if (guest && guest.sessions) {
+      var currentWebSession = null;
+      
+      guest.sessions.forEach((session) => {
+        if (session.sessionType === 'WEB' && session.operatingSystem !== null && session.status === 'OPEN') {
+            currentWebSession = session;
+            return;
         }
+      });
+  
+      if (currentWebSession) {
+        print(currentWebSession);
+        var actualTimes = 0;
+        currentWebSession.events.forEach(event => {
+           if (event.type === targetEvent) {
+               actualTimes++;
+           } 
+        });
+        
+        if (actualTimes >= targetTimes)
+            return true;
+      }
+      return false;
     }
-    return false;
   })();
-  
-  function getCurrentWebSession(guest) {
-      var sessions = guest.sessions;
-      for (var i = 0; i < sessions.length; i++) {
-          if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem !== null && sessions[i].status === 'OPEN') {
-              return sessions[i];
-          }
-      }
-      return null;
-  }
-  
-  function getNumberOfViewEventsInSession(session) {
-      var numberOfEvents = 0;
-      for (var i = 0; i < session.events.length; i++) {
-          var event = session.events[i];
-          if (event.type === "VIEW") {
-              numberOfEvents++;
-          }
-      }
-      return numberOfEvents;
-  }

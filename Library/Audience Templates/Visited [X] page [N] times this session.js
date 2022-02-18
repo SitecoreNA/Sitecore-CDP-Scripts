@@ -4,35 +4,25 @@
 // The value returned can be accessed from the variant API response as 'filter'
 
 (function () {
-    var currentWebSession = getCurrentWebSession(guest);
-    if (currentWebSession) {
-        var numOfPageViews = getNumberOfViewEventsInSession(currentWebSession,"[[page|string]]");
-        var numOfTimes = "[[numberOfTimes|number]]";
-        if(numOfPageViews >= numOfTimes){
-            return {};
-        }
-    }
-    return false;
-  })();
-  
-  function getCurrentWebSession(guest) {
-      var sessions = guest.sessions;
-      for (var i = 0; i < sessions.length; i++) {
-          if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem != null && sessions[i].status === 'OPEN') {
-              return sessions[i];
-          }
-      }
-      return null;
-  }
+    var viewPage = '[[Page | string]]';
+    var actualViews = 0;
+    var targetViews = [[numberOfTimes|number]];
     
-  function getNumberOfViewEventsInSession(session, viewPage) {
-      var numberOfEvents = 0;
-      for (var i = 0; i < session.events.length; i++) {
-          var event = session.events[i];
-          if (event.type === "VIEW" &&  event.arbitraryData.page.indexOf(viewPage) !== -1) {
-              numberOfEvents++;
-          }
+    if (guest && guest.sessions) {
+      guest.sessions.forEach((session) => {
+        if (session.sessionType === 'WEB' && session.operatingSystem !== null && session.status === 'OPEN') {
+            session.events.forEach((event) => {
+                if (event.type === 'VIEW' && event.arbitraryData.page.indexOf(viewPage) !== -1){
+                   actualViews++;
+                }
+            })
+        }
+      });
+     
+      if (actualViews >= targetViews) {
+          return true;
       }
-      return numberOfEvents;
-  }
-  
+      
+      return false;
+    }
+  })();
