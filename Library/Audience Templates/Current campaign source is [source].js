@@ -3,8 +3,6 @@
 // Any truthy return value will pass the audience filter, it is recommended to return an object
 // The value returned can be accessed from the variant API response as 'filter'
 
-// This code is confirmed to work. - CHC
-
 var utmsource = '[[UTM Source|string]]';
 (function () {
     if (guest && guest.sessions) {

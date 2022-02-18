@@ -3,8 +3,6 @@
 // Any truthy return value will pass the audience filter, it is recommended to return an object
 // The value returned can be accessed from the variant API response as 'filter'
 
-// This code should work. - CHC
-
 var utmcampaign = '[[UTM Campaign|string]]';
 
 (function () {

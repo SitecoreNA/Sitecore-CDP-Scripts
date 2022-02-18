@@ -4,8 +4,6 @@
 // The value returned can be accessed from the variant API response as 'filter'
 // Thanks to Haddad
 
-// This is confirmed to work. - CHC
-
 (function () {
   let page = `[[Page | string]]`;
 
