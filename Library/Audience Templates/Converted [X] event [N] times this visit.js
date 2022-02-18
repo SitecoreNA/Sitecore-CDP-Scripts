@@ -20,24 +20,17 @@ var targetTimes = [[numberOfTimes|number]];
       });
   
       if (currentWebSession) {
-         print(currentWebSession);
-         return countNumberOfViewEventsInSession(currentWebSession);
+        print(currentWebSession);
+        var actualTimes = 0;
+        currentWebSession.events.forEach(event => {
+           if (event.type === targetEvent) {
+               actualTimes++;
+           } 
+        });
+        
+        if (actualTimes >= targetTimes)
+            return true;
       }
       return false;
     }
   })();
-
-function countNumberOfViewEventsInSession(session) {
- 
-    var actualTimes = 0;
-    session.events.forEach(event => {
-       if (event.type === targetEvent) {
-           actualTimes++;
-       } 
-    });
-    
-    if (actualTimes >= targetTimes) {
-        return true;
-    }
-    return false;
-}
