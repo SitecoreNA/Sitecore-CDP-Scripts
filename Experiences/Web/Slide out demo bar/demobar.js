@@ -56,6 +56,7 @@ document.getElementById("forceCloseButton").onclick = sendForceClose;
 document.getElementById("customEventButton").onclick = sendCustomEvent;
 document.getElementById("checkoutCartButton").onclick = checkoutCartEvent;
 document.getElementById("clearCartButton").onclick = clearCartEvent;
+document.getElementById("anonymousButton").onclick = anonymousEvent;
 
 /* View Guest Link 
 Boxever.browserShow(
@@ -194,6 +195,11 @@ function clearCartEvent() {
   Boxever.eventCreate(clearCartEvent, function (data) {}, "json");
   showToast();
   return false;
+}
+
+function anonymousEvent() {
+    Boxever.reset();
+    //location.reload();
 }
 
 
