@@ -30,12 +30,12 @@
 
 #bx-demobar #saveMsg { background-color: #333378; color: white; padding: 5px; text-align: center; margin: 16px; border-radius: 5px; position: absolute; width: 410px; }
 
-#bx-demobar button.accordion { width: 100%; background-color: whitesmoke; border: none; outline: none; text-align: left; padding: 15px 20px; font-size: 18px; color: #333; cursor: pointer; transition: background-color 0.2s linear; font-family: [[Font]]; }
+#bx-demobar button.demobar-accordion { width: 100%; background-color: whitesmoke; border: none; outline: none; text-align: left; padding: 15px 20px; font-size: 18px; color:#212621; text-transform: lowercase; cursor: pointer; transition: background-color 0.2s linear; font-weight: 300; font-family: [[Font]]; }
 
-#bx-demobar button.accordion:after { content: "+"; font-size: 18px; float: right; }
-#bx-demobar button.accordion.is-open:after { content: "-"; }
-#bx-demobar button.accordion:hover, #bx-demobar button.accordion.is-open { background-color: #ddd; }
-#bx-demobar .accordion-content { background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-in-out; }
+#bx-demobar button.demobar-accordion:after { content: "+"; font-size: 18px; float: right; }
+#bx-demobar button.demobar-accordion.is-open:after { content: "-"; }
+#bx-demobar button.demobar-accordion:hover, #bx-demobar button.accordion.is-open { background-color: #ddd; }
+#bx-demobar .demobar-accordion-content { background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-in-out; }
 #bx-demobar form { max-width: 475px; margin: 10px auto; }
 
 #bx-demobar input[type="text"], #bx-demobar input[type="password"], #bx-demobar input[type="date"], #bx-demobar input[type="datetime"], 

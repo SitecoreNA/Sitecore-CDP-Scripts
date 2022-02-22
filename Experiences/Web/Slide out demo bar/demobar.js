@@ -198,7 +198,7 @@ function clearCartEvent() {
 
 
 /* code to make accordion work */
-const accordionBtns = document.querySelectorAll(".accordion");
+const accordionBtns = document.querySelectorAll(".demobar-accordion");
 
 accordionBtns.forEach((accordion) => {
   accordion.onclick = function () {
