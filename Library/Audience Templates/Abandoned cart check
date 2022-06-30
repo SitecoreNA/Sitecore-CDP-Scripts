@@ -1,0 +1,26 @@
+// Use server-side JavaScript to filter your audience further
+// You have full access to the guest context which can be accessed under guest, e.g. guest.email
+// Any truthy return value will pass the audience filter, it is recommended to return an object
+// The value returned can be accessed from the variant API response as 'filter'
+// looks back at sessions to see if there was an abandoned cart event. 
+
+(function () {
+  //For valid sessions
+  if (guest && guest.sessions) {
+
+    let SessionsToLookBack = `[[Nuber of Sessions to look back | number | 3]]`;
+    
+    //If # of sessions is 0, then look at all available sessions
+    if (SessionsToLookBack <= 0 )
+    {
+          SessionsToLookBack = guest.sessions.length;
+    }
+    
+    for (let s = 0; (s < SessionsToLookBack && s < guest.sessions.length); s++) {
+        if (guest.sessions[s].cartType === "ABANDONED") {
+          return true;
+        }
+      }
+    }
+  return false;
+})();
