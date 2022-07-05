@@ -1,8 +1,10 @@
 # **How to "install" a demo bar**
 
-Copy and paste the provided code for the demo/data bar into a Sitecore Web Experience.
+You first need to have the Sitecore JS library installed on your target website.
 
-Then either "preview" or set the Experience live.
+Copy and paste the provided code for the demo/data bar into a new Sitecore Web Experience.
+
+Then either "Preview" or set the Experience live.
 
 *Add Page Targeting if you are using a shared enviorment + setting live*
 
