@@ -4,7 +4,7 @@ Copy and paste the provided code for the demo/data bar into a Sitecore Web Exper
 
 Then either "preview" or set the Experience live.
 
-***Add Page Targeting if you are using a shared enviorment.***
+*Add Page Targeting if you are using a shared enviorment + setting live*
 
 
 # Slide out demo bar:
