@@ -1,6 +1,6 @@
 # **How to "install" a demo bar**
 
-Copy and paste the provided code for the demo bar into a Sitecore Web Experience.
+Copy and paste the provided code for the demo/data bar into a Sitecore Web Experience.
 
 Then either "preview" or set the Experience live.
 
