@@ -1,6 +1,6 @@
 # **How to "install" a demo bar**
 
-You first need to have the Sitecore JS library installed on your target website.
+You first need to have the Sitecore JS library installed on your target website. Use [_TM Script](https://github.com/rjzflynnbx/Sitecore-CDP-Scripts/tree/master/_TM%20Script "_TM Script")
 
 Then copy and paste the provided code for the demo/data bar into a new Sitecore Web Experience.
 
