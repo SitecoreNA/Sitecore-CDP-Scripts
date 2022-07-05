@@ -6,7 +6,7 @@
 
 # Custom demo tutorial
 
- 1. First you need to install the '_TM Script' if the website you want
+ 1. First you need to install the [_TM Script](https://github.com/rjzflynnbx/Sitecore-CDP-Scripts/tree/master/_TM%20Script "_TM Script") if the website you want
     to demo on does not already have the Sitecore JS library installed
  2. Second you need to "install" one of both of the Web Experiences in
         [Experiences/Web](https://github.com/rjzflynnbx/Sitecore-CDP-Scripts/tree/master/Experiences/Web
