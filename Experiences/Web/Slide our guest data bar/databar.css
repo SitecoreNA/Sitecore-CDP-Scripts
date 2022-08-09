@@ -31,7 +31,7 @@ button.databar-accordion { width: 100%; background-color: whitesmoke; border: no
 button.databar-accordion:after { content: "+"; font-size: 18px; float: right; }
 button.databar-accordion.is-open:after { content: "-"; }
 button.databar-accordion:hover, button.databar-accordion.is-open { background-color: #ddd; }
-.databar-accordion-content { background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-in-out; }
+.databar-accordion-content { background-color: white; width: 400px; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-in-out; }
 
 .guestHeading { margin:10px; }
 .guestIdentifer { padding:0 !important; font-size: 17px !important; line-height: 24px !important; }
