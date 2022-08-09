@@ -24,9 +24,9 @@
 
 /* accordion and scrollbar */
 .demobar-container { width: 99%; max-width: 440px; margin: 5px auto; overflow-y: auto; height: 90vh; }
-.demobar-container::-webkit-scrollbar { width: 12px; /* width of the entire scrollbar */ }
-.demobar-container::-webkit-scrollbar-track { background: #fff; /* color of the tracking area */ }
-.demobar-container::-webkit-scrollbar-thumb { background-color: #005E6E; /* color of the scroll thumb */ border-radius: 20px; /* roundness of the scroll thumb */ border: 3px solid #fff; /* creates padding around scroll thumb */ }
+.demobar-container::-webkit-scrollbar { width: 12px; /* width of the entire scrollbar */}
+.demobar-container::-webkit-scrollbar-track { background: #fff; /* color of the tracking area */}
+.demobar-container::-webkit-scrollbar-thumb { background-color: #005E6E; /* color of the scroll thumb */border-radius: 20px; /* roundness of the scroll thumb */ border: 3px solid #fff; /* creates padding around scroll thumb */}
 
 #bx-demobar #saveMsg { background-color: #333378; color: white; padding: 5px; text-align: center; margin: 16px; border-radius: 5px; position: absolute; width: 410px; }
 
@@ -35,7 +35,7 @@
 #bx-demobar button.demobar-accordion:after { content: "+"; font-size: 18px; float: right; }
 #bx-demobar button.demobar-accordion.is-open:after { content: "-"; }
 #bx-demobar button.demobar-accordion:hover, #bx-demobar button.accordion.is-open { background-color: #ddd; }
-#bx-demobar .demobar-accordion-content { background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-in-out; }
+#bx-demobar .demobar-accordion-content { background-color: white; height: 500px; width: 400px; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-in-out; }
 #bx-demobar form { max-width: 475px; margin: 10px auto; }
 
 #bx-demobar input[type="text"], #bx-demobar input[type="password"], #bx-demobar input[type="date"], #bx-demobar input[type="datetime"], 
