@@ -12,12 +12,11 @@
     'use strict';
     //Sitecore CDP settings
     const SITECORECDP_CLIENT_KEY = "add your client key";  
-    const SITECORECDP_REST_API_BASIC_AUTH = "Basic ..." // add yours here
-    const SITECORECDP_POINT_OF_SALE = "StandardDemo"; //  do not change
+    const SITECORECDP_POINT_OF_SALE = "StandardDemo"; 
     const SITECORECDP_API_TARGET = "https://api-us.boxever.com/v1.2"; //  select your emdpoint
     const SITECORECDP_WEB_FLOW_TARGET = "https://d35vb5cccm4xzp.cloudfront.net"; //  do not change
     const SITECORECDP_JS_LIB_SRC = "https://d1mj578wat5n4o.cloudfront.net/boxever-1.4.8.min.js"; //  do not change
-    const SITECORECDP_COOKIE_DOMAIN = '*.thosmoser.com'; //replace TLD with your client/prospect
+    const SITECORECDP_COOKIE_DOMAIN = '.example.com'; //replace with your target website
     const CURRENCY = "USD";
 
     //Script settings
