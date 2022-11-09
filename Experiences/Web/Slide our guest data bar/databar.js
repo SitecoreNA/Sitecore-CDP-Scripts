@@ -15,7 +15,7 @@ setTimeout(function () {
   // bxContent.classList.add('open');
 });
 
-var bxdemobarClose = bxContent.querySelector('.close__btn-close-icon');
+var bxdemobarClose = bxContent.querySelector('.bx-databar-close-btn');
 bxdemobarClose.onclick = function () {
   if (bxContent.classList.contains('open')) {
     bxContent.classList.remove('open');
