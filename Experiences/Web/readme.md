@@ -29,3 +29,4 @@ This demo bar let's you see details about the ongoing session without needing to
 # **Versions**
 * v1 - Feb 22, 2022
 * v1.1 - Aug 10, 2022
+* v1.2 - Nov 10, 2022 (icons, custom events, link to Guest profile)
