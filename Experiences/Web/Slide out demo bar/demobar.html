@@ -75,8 +75,18 @@
         <div class="demobar-accordion-content">
           <form id="identifyUserForm" action="" method="GET">
               <div class="formfields">
-                <label for="mail">type:</label>
-                <input type="text" placeholder="type" id="customType" />
+                <label for="customType">type:</label>
+                <input type="text" value="EVENT_TYPE" id="customType" />
+
+                <label for="customEventKeyValuePair1">Event Attribute (key,value):</label>
+                <input type="text" value="eventAttributeKey,eventAttributeValue" id="customEventKeyValuePair1" />
+
+                <label for="customEventKeyValuePair2">Event Attribute (key,value):</label>
+                <input type="text"  placeholder="key2,value2" id="customEventKeyValuePair2" />
+
+                <label for="customEventKeyValuePair3">Event Attribute (key,value):</label>
+                <input type="text"  placeholder="key3,value3" id="customEventKeyValuePair3" />
+
               </div>
               <button id="customEventButton">send</button>
             </form>

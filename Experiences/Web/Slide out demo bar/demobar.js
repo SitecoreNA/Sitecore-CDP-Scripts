@@ -2,7 +2,7 @@
 var compiledCSS = Boxever.templating.compile(variant.assets.css)(variant);
 var styleTag = document.getElementById('style-' + variant.ref);
 if (styleTag) {
-    styleTag.innerHTML = compiledCSS;
+  styleTag.innerHTML = compiledCSS;
 }
 // End Adds a unique variant identifier to CSS when deployed to ensure CSS does not impact styling of other elements.
 
@@ -10,7 +10,7 @@ if (styleTag) {
 insertHTMLAfter('body');
 
 
-/* code to operate the demobar */ 
+/* code to operate the demobar */
 var bxContent = document.getElementById('bx-demobar');
 setTimeout(function () {
   // bxContent.classList.add('open');
@@ -21,9 +21,8 @@ var bxdemobarClose = bxContent.querySelector('.bx-databar-close-btn');
 bxdemobarClose.onclick = function () {
   if (bxContent.classList.contains('open')) {
     bxContent.classList.remove('open');
-  }
-  else {
-      bxContent.classList.add('open');
+  } else {
+    bxContent.classList.add('open');
   }
   //sendInteractionToBoxever('DISMISSED');
 };
@@ -44,9 +43,11 @@ function sendInteractionToBoxever(interactionType) {
 
 /* toast */
 function showToast() {
- var toast = document.getElementById("saveMsg");
- toast.style = "display:block";
- setTimeout(() => { toast.style = "display:none";}, 1500);
+  var toast = document.getElementById("saveMsg");
+  toast.style = "display:block";
+  setTimeout(() => {
+    toast.style = "display:none";
+  }, 1500);
 }
 
 /* bind for buttons */
@@ -86,12 +87,10 @@ function identifyUser() {
     page: window.location.pathname,
     pos: document.getElementById("PointOfSale").value,
     email: document.getElementById("identifyUserEmail").value,
-    identifiers: [
-      {
-        provider: document.getElementById("identifyProviderName").value,
-        id: document.getElementById("identifyUserName").value,
-      },
-    ],
+    identifiers: [{
+      provider: document.getElementById("identifyProviderName").value,
+      id: document.getElementById("identifyUserName").value,
+    }, ],
   };
 
   identityEvent = Boxever.addUTMParams(identityEvent);
@@ -150,11 +149,31 @@ function sendForceClose() {
 }
 
 function sendCustomEvent() {
+
+  const kv1 = document.getElementById("customEventKeyValuePair1").value;
+  const kv1_values = kv1.split(",");
+  const kv2 = document.getElementById("customEventKeyValuePair2").value;
+  const kv2_values = kv2.split(",");
+  const kv3 = document.getElementById("customEventKeyValuePair3").value;
+  const kv3_values = kv3.split(",");
+  
+  var dataObj = {};
+  if (kv1 != null && kv1 != undefined && kv1 != "undefined") {
+    dataObj[kv1_values[0]] = kv1_values[1];
+  }
+  if (kv2 != null && kv2 != undefined && kv2 != "undefined") {
+    dataObj[kv2_values[0]] = kv2_values[1];
+  }
+  if (kv3 != null && kv3 != undefined && kv3 != "undefined") {
+    dataObj[kv3_values[0]] = kv3_values[1];
+  }
+
   var customEvent = {
     browser_id: Boxever.getID(),
     channel: document.getElementById("Channel").value,
     type: document.getElementById("customType").value,
     pos: document.getElementById("PointOfSale").value,
+    ext: dataObj
   };
 
   Boxever.eventCreate(customEvent, function (data) {}, "json");
@@ -198,8 +217,8 @@ function clearCartEvent() {
 }
 
 function anonymousEvent() {
-    Boxever.reset();
-    //location.reload();
+  Boxever.reset();
+  //location.reload();
 }
 
 
