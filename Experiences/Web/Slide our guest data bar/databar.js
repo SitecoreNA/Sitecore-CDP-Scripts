@@ -2,14 +2,14 @@
 var compiledCSS = Boxever.templating.compile(variant.assets.css)(variant);
 var styleTag = document.getElementById('style-' + variant.ref);
 if (styleTag) {
-    styleTag.innerHTML = compiledCSS;
+  styleTag.innerHTML = compiledCSS;
 }
 // End Adds a unique variant identifier to CSS when deployed to ensure CSS does not impact styling of other elements.
 
 // make space in the body for the experience
 insertHTMLAfter('body');
 
-/* code to operate the databar */ 
+/* code to operate the databar */
 var bxContent = document.getElementById('bx-databar');
 setTimeout(function () {
   // bxContent.classList.add('open');
@@ -19,9 +19,8 @@ var bxdemobarClose = bxContent.querySelector('.bx-databar-close-btn');
 bxdemobarClose.onclick = function () {
   if (bxContent.classList.contains('open')) {
     bxContent.classList.remove('open');
-  }
-  else {
-      bxContent.classList.add('open');
+  } else {
+    bxContent.classList.add('open');
   }
 };
 
@@ -46,3 +45,17 @@ accordionBtns.forEach((accordion) => {
     }
   };
 });
+
+
+var bxGuestLink = bxContent.querySelector('#bxGuestLink');
+bxGuestLink.onclick = function () {
+  event.preventDefault();
+  var sitecoreCDPAppBaseURL = "https://app.boxever.com";
+  var boxeverSettingsEndpoint = _boxever_settings.target;
+  if(boxeverSettingsEndpoint.includes("api-ap-southeast-2")){
+    sitecoreCDPAppBaseURL = "https://app-ap.boxever.com"
+  }
+  //TODO: usa endpoint
+  var cdpProfileLink = sitecoreCDPAppBaseURL + '/#/guests/list?filter=customer&q=bid:' + window.Boxever.getID();
+  window.open(cdpProfileLink, '_blank').focus();
+};
