@@ -10,10 +10,16 @@
 
 (function() {
     'use strict';
+
+    //Set the SITECORECDP_API_TARGET that matches your API key (Europe,USA,or Asia)
+    const EU_API_TARGET = "https://api.boxever.com/v1.2";
+    const US_API_TARGET = "https://api-us.boxever.com/v1.2";
+    const AP_API_TARGET = "https://api-ap-southeast-2-production.boxever.com/v1.2";
+
     //Sitecore CDP settings
     const SITECORECDP_CLIENT_KEY = "add your client key";  
+    const SITECORECDP_API_TARGET = US_API_TARGET; //  select your emdpoint
     const SITECORECDP_POINT_OF_SALE = "StandardDemo"; 
-    const SITECORECDP_API_TARGET = "https://api-us.boxever.com/v1.2"; //  select your emdpoint
     const SITECORECDP_WEB_FLOW_TARGET = "https://d35vb5cccm4xzp.cloudfront.net"; //  do not change
     const SITECORECDP_JS_LIB_SRC = "https://d1mj578wat5n4o.cloudfront.net/boxever-1.4.8.min.js"; //  do not change
     const SITECORECDP_COOKIE_DOMAIN = '.example.com'; //replace with your target website
