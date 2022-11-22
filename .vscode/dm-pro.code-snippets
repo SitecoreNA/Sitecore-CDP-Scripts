@@ -1,0 +1,144 @@
+{
+	"bx_getMostRecentWebSession": {
+	  "prefix": "bx_getMostRecentWebSession",
+	  "body": [
+		"function getMostRecentWebSession(guest) {",
+		"    var sessions = guest.sessions;",
+		"    for (var i = 0; i < sessions.length; i++) {",
+		"        if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem != null) {",
+		"            return sessions[i];",
+		"        }",
+		"    }",
+		"    return null;",
+		"}"
+	  ],
+	  "description": "getMostRecentWebSession"
+	},
+	"bx_getCurrentWebSession": {
+	  "prefix": "bx_getCurrentWebSession",
+	  "body": [
+		"function getCurrentWebSession(guest) {",
+		"    var sessions = guest.sessions;",
+		"    for (var i = 0; i < sessions.length; i++) {",
+		"        if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem != null && sessions[i].status === 'OPEN') {",
+		"            return sessions[i];",
+		"        }",
+		"    }",
+		"    return null;",
+		"}"
+	  ],
+	  "description": "getCurrentWebSession"
+	},
+	"bx_getDataExtensionWithName": {
+	  "prefix": "bx_getDataExtensionWithName",
+	  "body": [
+		"function getDataExtensionWithName(guest, extensionName) {",
+		"    var toReturn = null;",
+		"    guest.dataExtensions.forEach(function (dataExtension) {",
+		"        if (dataExtension.name === extensionName) {",
+		"            toReturn = dataExtension;",
+		"        }",
+		"    });",
+		"    return toReturn;",
+		"}"
+	  ],
+	  "description": "getDataExtensionWithName"
+	},
+	"bx_getDataExtensionValue": {
+	  "prefix": "bx_getDataExtensionValue",
+	  "body": [
+		"function getDataExtensionValue(dataExtension, dataExtensionKey) {",
+		"    if (dataExtension != null) {",
+		"        return dataExtension.values[dataExtensionKey];",
+		"    }",
+		"    return null;",
+		"}"
+	  ],
+	  "description": "getDataExtensionValue"
+	},
+	"bx_getMapFromDataExtension": {
+	  "prefix": "bx_getMapFromDataExtension",
+	  "body": [
+		"function getMapFromDataExtension(dataExtension) {",
+		"    return dataExtension.values;",
+		"}"
+	  ],
+	  "description": "getMapFromDataExtension"
+	},
+	"bx_getFirstEventOfType": {
+	  "prefix": "bx_getFirstEventOfType",
+	  "body": [
+		"function getFirstEventOfType(session, eventType) {",
+		"    var events = session.events;",
+		"    for (var i = 0; i < events.length; i++) {",
+		"        if (events[i].type === eventType) {",
+		"            return events[i];",
+		"        }",
+		"    }",
+		"    return null;",
+		"}"
+	  ],
+	  "description": "getFirstEventOfType"
+	},
+	"bx_sessionContainsEventOfType": {
+	  "prefix": "bx_sessionContainsEventOfType",
+	  "body": [
+		"function sessionContainsEventOfType(session, eventType) {",
+		"    var events = session.events;",
+		"    for (var i = 0; i < events.length; i++) {",
+		"        if (events[i].type === eventType) {",
+		"            return true;",
+		"        }",
+		"    }",
+		"    return false;",
+		"}"
+	  ],
+	  "description": "sessionContainsEventOfType"
+	},
+	"bx_getNumberOfEventsInSession": {
+	  "prefix": "bx_getNumberOfEventsInSession",
+	  "body": [
+		"function getNumberOfEventsInSession(session, eventType) {",
+		"    var numberOfEvents = 0;",
+		"    for (var i = 0; i < session.events.length; i++) {",
+		"        var event = session.events[i];",
+		"        if (event.type === eventType) {",
+		"            numberOfEvents++;",
+		"        }",
+		"    }",
+		"    return numberOfEvents;",
+		"}"
+	  ],
+	  "description": "getNumberOfEventsInSession"
+	},
+	"bx_getAllEventsOfType": {
+	  "prefix": "bx_getAllEventsOfType",
+	  "body": [
+		"function getAllEventsOfType(session, eventType) {",
+		"    var eventsOfType = [];",
+		"    for (var i = 0; i < session.events.length; i++) {",
+		"        var event = session.events[i];",
+		"        if (event.type === eventType) {",
+		"            eventsOfType.push(event);",
+		"        }",
+		"    }",
+		"    return eventsOfType;",
+		"}"
+	  ],
+	  "description": "getAllEventsOfType"
+	},
+	"bx_getMostRecentAbandonedSession": {
+	  "prefix": "bx_getMostRecentAbandonedSession",
+	  "body": [
+		"function getMostRecentAbandonedSession(guest) {",
+		"    var sessions = guest.sessions;",
+		"    for (var i = 0; i < sessions.length; i++) {",
+		"        if (sessions[i].sessionType === 'WEB' && sessions[i].operatingSystem != null && sessions[i].cartType === \"ABANDONED\") {",
+		"            return sessions[i];",
+		"        }",
+		"    }",
+		"}"
+	  ],
+	  "description": "getMostRecentAbandonedSession"
+	}
+  }
