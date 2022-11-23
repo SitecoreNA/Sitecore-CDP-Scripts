@@ -5,8 +5,8 @@ Explained here is how to develop and test Sitecore Personalize Decision Model (o
 
 # Prerequisites
 
-Node 
-Visual Studio Code 
+* Node 
+* Visual Studio Code 
 
 ## How to
 
