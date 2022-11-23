@@ -13,6 +13,14 @@ Explained here is how to develop and test Sitecore Personalize Decision Model (o
 Use the file local-dm-script as a template to get started.
 ![enter image description here](https://i.ibb.co/ch8yCFT/Screenshot-2022-11-23-at-09-50-21.png)
 
+## The guest JSON file
+
+Enable debug mode in your Sitecore CDP/P application. (Under Your name -> feature flags setting).
+
+Copy any Guest JSON into the guest.json file or load multiple guest JSON files and update the local-dm-script.js file as required.
+
+![enter image description here](https://i.ibb.co/ww8dG5Y/Untitled-design.png)
+
 ## Visual Studio Code  snippets
 
 Snippets allow you to auto complete a function quickly in VSCode.
