@@ -2,7 +2,7 @@
 
  - [_TM Script](https://github.com/rjzflynnbx/Sitecore-CDP-Scripts/tree/master/_TM%20Script "_TM Script") = The 'base' tampermonkey script which installs the Sitecore JS library and sends a view event on each page load
  -  [Experiences/Web](https://github.com/rjzflynnbx/Sitecore-CDP-Scripts/tree/master/Experiences/Web "This path skips through empty directories") 2 Sitecore Web Experienes (demo bars) you can use for custom demos 
-- [Library](https://github.com/rjzflynnbx/Sitecore-CDP-Scripts/tree/master/Library "Library") = JS code snippets you can use as Real Time  [Audiences](https://doc.sitecore.com/cdp/#?cludoquery=realtime%20audience&cludopage=1&cludorefurl=https://doc.sitecore.com/cdp/&cludorefpt=Sitecore%20Documentation%20-%20Personalize%20&%20CDP&cludorefact=real%20time%20audience%20&cludorefaci=1&cludoinputtype=standard)
+- [Library](https://github.com/rjzflynnbx/Sitecore-CDP-Scripts/tree/master/Library "Library") = JS code snippets you can use as Real Time  [Audiences](https://doc.sitecore.com/cdp/#?cludoquery=realtime%20audience&cludopage=1&cludorefurl=https://doc.sitecore.com/cdp/&cludorefpt=Sitecore%20Documentation%20-%20Personalize%20&%20CDP&cludorefact=real%20time%20audience%20&cludorefaci=1&cludoinputtype=standard), Decisoin Model programmables and real-time audience filters
 
 # Custom demo tutorial
 
