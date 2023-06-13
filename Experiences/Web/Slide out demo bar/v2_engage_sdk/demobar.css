@@ -69,7 +69,7 @@
 #bx-{{ref}} .demobar-accordion-content select { width: 100%; background-color: white; color: #232323; border: 2px solid #666666; outline: none; text-align: left; padding: 5px 10px; font-size: 18px; height: auto; margin: 0; margin-bottom: 20px; }
 #bx-{{ref}} .demobar-accordion-content input[type="radio"],
 #bx-{{ref}} .demobar-accordion-content input[type="checkbox"] { margin: 0 4px 8px 0; }
-#bx-{{ref}} .demobar-accordion-content select { padding: 6px; height: 32px; width:87%; }
+#bx-{{ref}} .demobar-accordion-content select { padding: 6px; height: 32px; }
 #bx-{{ref}} .demobar-accordion-content button { padding: 10px 31px; color: rgb(35, 35, 35); background-color: rgb(255, 211, 28); transition: all .2s ease-in-out; display: inline-block; font-size: 20px; line-height: 30px; text-align: center; font-style: normal; border-radius: 7.5px; border-width: 0px; font-weight: 500; }
 
 #bx-{{ref}} .demobar-accordion-content .buttonContainer { text-align: center; }
