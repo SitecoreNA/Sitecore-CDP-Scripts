@@ -17,7 +17,7 @@
     const AP_API_TARGET = "https://api-engage-ap.sitecorecloud.io​";
 
     //Engage SDK settings
-    const ENGAGE_COOKIE_DOMAIN = ''; //replace with your target website
+    const ENGAGE_COOKIE_DOMAIN = '.yoursite.com'; //replace with your target website
     const ENGAGE_API_TARGET = AP_API_TARGET;
     const ENGAGE_CLIENT_KEY = "";
     const ENGAGE_POINT_OF_SALE = "StandardDemo";
