@@ -228,6 +228,8 @@ function clearCartEvent() {
 function anonymousEvent() {
     var cookieDoman = localStorage.getItem("scDemoBar_cookieDomain");
     document.cookie = 'bid_' + Engage.settings.client_key + '=cookievalue=; path=/; domain=' + cookieDoman + '; expires=' + new Date(0).toUTCString();
+    localStorage.setItem("scDemoBar_identityProvider", null);
+    localStorage.setItem("scDemoBar_identityValue", null);
     //TODO: delete local storage if exists?
 }
 
