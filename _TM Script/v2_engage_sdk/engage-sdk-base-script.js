@@ -76,7 +76,7 @@
 
     function getCookieDomain()
     {
-        const top_level_domains = ['com', 'net', 'gov', 'org', 'edu']
+        const top_level_domains = ['com', 'net', 'gov', 'org', 'edu', 'ie', 'sg']
 
         var url_parts = window.location.hostname.split('.')
         var past_top_level = false
