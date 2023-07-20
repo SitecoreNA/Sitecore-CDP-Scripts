@@ -6,7 +6,7 @@
 
 # How to do a custom demo on any domain:
 
- 1. You need to install the script in [_TM Script](https://github.com/Chris-Castle/Sitecore-CDP-Scripts/blob/master/_TM%20Script/v2_engage_sdk/engage-sdk-base-script.js)if the website you want
+ 1. You need to install the script in [_TM Script](https://github.com/Chris-Castle/Sitecore-CDP-Scripts/blob/master/_TM%20Script/v2_engage_sdk/engage-sdk-base-script.js) if the website you want
     to demo on does not already have the Sitecore JS library installed
  2. You need to "install" one or both of the Web Experiences (Demo bars) in
         [\[Experiences/Web\]](https://github.com/Chris-Castle/Sitecore-CDP-Scripts/tree/master/Experiences/Web)
