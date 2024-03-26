@@ -1,7 +1,7 @@
 # What's here:
 
 - [TM Script](https://github.com/Chris-Castle/Sitecore-CDP-Scripts/blob/master/_TM%20Script/v2_engage_sdk/engage-sdk-base-script.js)= The tampermonkey script which installs the Sitecore JS library and sends a view event on each page load (of course you can extend it)
- -  [Experiences/Web](https://github.com/Chris-Castle/Sitecore-CDP-Scripts/tree/master/Experiences/Web)2 Sitecore Web Experienes (demo bars) you can use for custom demos 
+ -  [Experiences/Web](https://github.com/Chris-Castle/Sitecore-CDP-Scripts/tree/master/Experiences/Web)= 2 Sitecore Web Experienes (demo bars) you can use for custom demos 
 - [Library](https://github.com/Chris-Castle/Sitecore-CDP-Scripts/tree/master/Library)= JS code snippets you can use as Conditions & Decision Model programmables 
 
 # How to do a custom demo on any domain:
