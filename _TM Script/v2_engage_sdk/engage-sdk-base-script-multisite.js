@@ -1,18 +1,17 @@
 // ==UserScript==
-// @name Sitecore CDP/P base script - {{SiteName}}
+// @name Sitecore CDP/P base script - Multi-site - Engage
 // @namespace http://tampermonkey.net/
 // @version 0.2
-// @description Generic Load Sitecore CDP Tampermonkey script
+// @description Generic Load Sitecore CDP Tampermonkey scripts
 // @author Sitecore Presales
 // @match https://*.yoursite.com/*
+// @match https://*.yourothersite.com/*
+// @match https://*.dupliacte-for-each-site-you-want-this-to-run-on.com/*
 // @grant  none
 // ==/UserScript==
 
 (function () {
     'use strict';
-
-    // edit the {{cookieDomain}}, {{clientKey}}, {{pointOfSale}} and {{SiteName}} with your CDP/P enviorment values and website name
-    // see https://doc.sitecore.com/cdp/en/developers/api/collect-required-details.html for where and how to get these values
 
     //Choose the API_TARGET that matches your API region (Europe,USA,or Asia)
     const EU_API_TARGET = "https://api-engage-eu.sitecorecloud.io";
@@ -20,12 +19,12 @@
     const AP_API_TARGET = "https://api-engage-ap.sitecorecloud.io​";
 
     //Engage SDK settings
-    const ENGAGE_COOKIE_DOMAIN = "{{cookieDomain}}"; // e.g. ".myretailsite.com"
+    const ENGAGE_COOKIE_DOMAIN = getCookieDomain() // Get's the cookie domain from the URL
     const ENGAGE_API_TARGET = AP_API_TARGET;
-    const ENGAGE_CLIENT_KEY = "{{clientKey}}";
-    const ENGAGE_POINT_OF_SALE = "{{pointOfSale}}";
+    const ENGAGE_CLIENT_KEY = "your env client key goes here";
+    const ENGAGE_POINT_OF_SALE = "your env pos goes here";
 
-    const CURRENCY = "USD";
+    const CURRENCY = "AUD";
     const CHANNEL = "WEB"
     const LANG = "EN";
 
@@ -73,5 +72,28 @@
         });
     }
 
+    function getCookieDomain()
+    {
+        const top_level_domains = ['com', 'net', 'gov', 'org', 'edu', 'ie', 'sg']
+
+        var url_parts = window.location.hostname.split('.')
+        var past_top_level = false
+        var site_domain = ''
+
+        for(var i = url_parts.length - 1; i >= 0; i--)
+        {
+            var url_part = url_parts[i]
+            site_domain = '.' + url_part + site_domain
+
+            if(past_top_level)
+            {
+                break
+            }
+
+            past_top_level = top_level_domains.includes(url_part)
+        }
+
+        return site_domain
+    }
 })();
 
