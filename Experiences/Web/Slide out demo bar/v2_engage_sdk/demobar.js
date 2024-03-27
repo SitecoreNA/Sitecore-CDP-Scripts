@@ -159,6 +159,14 @@ function sendForceClose() {
 
 function sendCustomEvent() {
 
+    const eventData = {
+        channel: document.getElementById("Channel").value,
+        currency: document.getElementById("Currency").value,
+        pointOfSale: document.getElementById("PointOfSale").value,
+        language: document.getElementById("Language").value,
+        page: window.location.pathname
+    }
+
     const kv1 = document.getElementById("eventKVpair1").value;
     const kv1_values = kv1.split(",");
 
@@ -174,26 +182,26 @@ function sendCustomEvent() {
     const kv5 = document.getElementById("eventKVpair5").value;
     const kv5_values = kv5.split(",");
 
-    var eventData = {}
+    var extensionData = {}
     if (kv1 != null && kv1 != undefined && kv1 != "undefined") {
-        eventData[kv1_values[0]] = kv1_values[1];
+        extensionData[kv1_values[0]] = kv1_values[1];
     }
     if (kv2 != null && kv2 != undefined && kv2 != "undefined") {
-        eventData[kv2_values[0]] = kv2_values[1];
+        extensionData[kv2_values[0]] = kv2_values[1];
     }
     if (kv3 != null && kv3 != undefined && kv3 != "undefined") {
-        eventData[kv3_values[0]] = kv3_values[1];
+        extensionData[kv3_values[0]] = kv3_values[1];
     }
     if (kv4 != null && kv4 != undefined && kv4 != "undefined") {
-        eventData[kv4_values[0]] = kv4_values[1];
+        extensionData[kv4_values[0]] = kv4_values[1];
     }
     if (kv5 != null && kv5 != undefined && kv5 != "undefined") {
-        eventData[kv5_values[0]] = kv5_values[1];
+        extensionData[kv5_values[0]] = kv5_values[1];
     }
 
-    engage.event(document.getElementById("customType").value, eventData)
+    engage.event(document.getElementById("customType").value, eventData, extensionData)
     showToast();
-    return false;
+    return false; 
 }
 
 
@@ -232,4 +240,3 @@ function anonymousEvent() {
     localStorage.setItem("scDemoBar_identityValue", null);
     //TODO: delete local storage if exists?
 }
-
