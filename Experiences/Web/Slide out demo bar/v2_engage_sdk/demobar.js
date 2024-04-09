@@ -201,21 +201,58 @@ function sendCustomEvent() {
 
     engage.event(document.getElementById("customType").value, eventData, extensionData)
     showToast();
-    return false; 
+    return false;
 }
 
 
 function checkoutCartEvent() {
+  
+    const orderUuid = uuidv4();
+    const orderedAt = new Date().toISOString();
+
     const eventData = {
         channel: document.getElementById("Channel").value,
-        language: document.getElementById("Language").value,
         currency: document.getElementById("Currency").value,
-        pos: document.getElementById("PointOfSale").value,
+        pointOfSale: document.getElementById("PointOfSale").value,
+        language: document.getElementById("Language").value,
         page: window.location.pathname,
-        reference_id: document.getElementById("checkoutRef").value,
-        status: document.getElementById("checkoutStatus").value
+        order: {
+            referenceId: orderUuid,
+            orderedAt: orderedAt,
+            status: "PURCHASED",
+            currencyCode: document.getElementById("Currency").value,
+            price: document.getElementById("OrderAmount").value,
+            paymentType: "Card",
+            cardType: "Visa",
+            // extensions: [
+            //     {
+            //         name: "ext",
+            //         key: "default",
+            //         refundable: true,
+            //     },
+            // ],
+            orderItems: [
+                {
+                    type: document.getElementById("OrderType").value,
+                    referenceId: orderUuid,
+                    orderedAt: orderedAt,
+                    status: "PURCHASED",
+                    currencyCode: document.getElementById("Currency").value,
+                    price: document.getElementById("OrderAmount").value,
+                    name: document.getElementById("OrderProductName").value,
+                    productId: document.getElementById("OrderProductId").value,
+                    quantity: 1
+                    // extensions: [
+                    //     {
+                    //         name: "ext",
+                    //         key: "default"
+                    //     },
+                    // ],
+                },
+            ],
+        },
     }
-    engage.event("CHECKOUT", eventData);
+    engage.event("ORDER_CHECKOUT", eventData);
     showToast();
     return false;
 }
@@ -239,4 +276,13 @@ function anonymousEvent() {
     localStorage.setItem("scDemoBar_identityProvider", null);
     localStorage.setItem("scDemoBar_identityValue", null);
     //TODO: delete local storage if exists?
+}
+
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
+    .replace(/[xy]/g, function (c) {
+        const r = Math.random() * 16 | 0, 
+            v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
 }

@@ -156,11 +156,23 @@
                 <button class="demobar-accordion-button">Checkout</button>
                 <div class="demobar-accordion-content">
                     <form id="checkoutForm" action="" method="GET">
-                        <label for="checkoutRef">Reference id:</label>
-                        <input type="text" id="checkoutRef" />
+                        <!-- <label for="checkoutRef">Reference id:</label>
+                        <input type="text" id="checkoutRef" /> -->
 
-                        <label for="checkoutStatus">Status:</label>
-                        <input type="text" value="PURCHASED" id="checkoutStatus" />
+                        <!-- <label for="checkoutStatus">Status:</label>
+                        <input type="text" value="PURCHASED" id="checkoutStatus" /> -->
+
+                        <label for="OrderType">Order type:</label>
+                        <input type="text" id="OrderType" /> 
+
+                        <label for="OrderAmount">Order amount:</label>
+                        <input type="number" id="OrderAmount" /> 
+
+                        <label for="OrderProductName">Product name:</label>
+                        <input type="text" id="OrderProductName" /> 
+
+                        <label for="OrderProductId">Product ID:</label>
+                        <input type="text" id="OrderProductId" /> 
 
                         <div class="buttonContainer">
                             <button id="checkoutCartButton">Send</button>
